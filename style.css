@@ -1,0 +1,373 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 400px;
+}
+
+.book {
+  width: 400px; /* Tetap dengan ukuran aslinya */
+  height: 300px; /* Tetap dengan ukuran aslinya */
+  position: relative;
+}
+
+.pages {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 7mm;
+  margin: 0 6px;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: 0.25s;
+  box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.15), 1px 3px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.page-side {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 7mm;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.page-head {
+  width: 100%;
+}
+
+.page-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "Comic Sans MS", "Comic Sans", arial;
+}
+
+.page-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  font-family: "Comic Sans MS", "Comic Sans", arial;
+}
+
+.page-content {
+  flex-grow: 1;
+  font-size: 13px;
+  display: flex;
+  align-items: flex-end;
+  font-family: monospace, monospace;
+}
+
+.page-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 14px;
+  font-family: "Comic Sans MS", "Comic Sans", arial;
+}
+
+.pg-no {
+  width: 14px;
+  padding: 0 15px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: rgb(40, 40, 40);
+  background: white;
+  border-radius: 3mm;
+}
+
+.front {
+  background: rgb(255, 228, 130);
+  color: rgb(40, 40, 40);
+  padding-left: 40px;
+}
+
+.back {
+  background: rgb(40, 40, 40);
+  color: white;
+  padding-right: 40px;
+  transform: rotateY(180deg);
+}
+
+.beads {
+  position: absolute;
+  top: 0;
+  left: -12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.bead {
+  width: 36px;
+  height: 12px;
+  background: white;
+  border-radius: 5mm;
+  z-index: 9999;
+  box-shadow: inset 1px 2px 0 0 rgba(0, 0, 0, 0.15), inset 1px 3px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  width: 100%;
+  max-width: 350px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.controls button {
+  background: white;
+  width: 40px;
+  height: 40px;
+  border: 0.4mm solid rgb(40, 40, 40);
+  border-radius: 50%;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@keyframes backgroundColorPalette {
+  0% {
+    background: #ee6055;
+  }
+  25% {
+    background: #60d394;
+  }
+  50% {
+    background: #aaf683;
+  }
+  75% {
+    background: #ffd97d;
+  }
+  100% {
+    background: #ff9b85;
+  }
+}
+
+body {
+  animation-name: backgroundColorPalette;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+.page-title-start {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 500;
+  font-family: 'Courier New', Courier, monospace;
+  padding-top: 30px;
+}
+
+.page-content-start {
+  display: flex;
+  justify-content: center; /* Pusatkan konten secara horizontal */
+  align-items: center; /* Pusatkan konten secara vertikal */
+  height: 100vh; /* Buat tinggi elemen sebesar viewport */
+  margin: 0; /* Hapus margin jika ada */
+  padding: 0; /* Hapus padding jika ada */
+  box-sizing: border-box; /* Sertakan padding dan border dalam ukuran elemen */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.page-content-start .material-icons-outlined {
+  font-size: 100px; /* Buat ikon lebih besar */
+  margin-right: 20px; /* Beri jarak antara ikon dan teks */
+}
+
+.page-content-start .text-content {
+  display: flex;
+  flex-direction: column; /* Letakkan teks dalam kolom */
+  justify-content: center; /* Pusatkan teks secara vertikal */
+  height: 100%; /* Buat text-content setinggi page-content-start */
+}
+
+.page-content-start p {
+  font-size: 22px; /* Sesuaikan ukuran font teks */
+  text-decoration: none; /* Hapus garis bawah default pada tautan */
+  color: inherit; /* Gunakan warna teks yang diwariskan dari elemen induk */
+  margin-bottom: 10px; /* Beri jarak antara tautan */
+}
+
+.page-content-quotes {
+  flex-grow: 1;
+  font-size: 18px;
+  display: flex;
+  align-items: flex-end;
+  font-family: monospace, monospace;
+}
+
+.page.transparent {
+  background-color: transparent; /* Membuat latar belakang transparan */
+  box-shadow: none; /* Menghapus shadow */
+  padding: 0; /* Menghapus padding */
+}
+
+.page-content-answer button {
+font-size: 20px;
+cursor: pointer;
+background-color: transparent; /* Membuat latar belakang transparan */
+box-shadow: none; /* Menghapus shadow */
+border: none; /* Menghapus border default */
+padding-left: 30px;
+}
+
+.page-content-answer .material-icons-outlined {
+font-size: 50px; /* Buat ikon lebih besar */
+}
+
+.page-title-answer {
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 30px;
+font-weight: 500;
+font-family: "Comic Sans MS", "Comic Sans", arial;
+}
+
+.page-title-answer p {
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 30px;
+font-weight: 500;
+font-family: "Comic Sans MS", "Comic Sans", arial;
+}
+
+.page-title-answer .material-icons-outlined {
+font-size: 25px; /* Buat ikon lebih besar */
+padding-bottom: 70px;
+}
+
+.page-subtitle-answer {
+font-size: 30px;
+font-weight: 300;
+font-family: "Comic Sans MS", "Comic Sans", arial;
+text-align: center;
+padding-top: 20px;
+}
+
+.page-content-answer {
+flex-grow: 1;
+font-size: 18px;
+display: flex;
+align-items: flex-end;
+font-family: monospace, monospace;
+margin: 0px;
+padding-left: 20%;
+}
+
+.page-title-end {
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 30px;
+font-weight: 500;
+font-family: "Comic Sans MS", "Comic Sans", arial;
+}
+
+.page-title-end .material-icons-outlined {
+font-size: 50px; /* Buat ikon lebih besar */
+}
+
+.page-content-end {
+display: flex;
+flex-direction: column; /* Menyusun konten secara vertikal */
+justify-content: flex-end; /* Pusatkan konten secara horizontal */
+align-items: center; /* Pusatkan konten secara vertikal */
+height: 100vh; /* Buat tinggi elemen sebesar viewport */
+margin: 0; /* Hapus margin jika ada */
+padding: 0; /* Hapus padding jika ada */
+box-sizing: border-box; /* Sertakan padding dan border dalam ukuran elemen */
+font-family: 'Courier New', Courier, monospace;
+writing-mode: horizontal-tb; /* Mengubah orientasi teks menjadi vertikal dari kanan ke kiri */
+text-align: center; /* Pusatkan teks secara horizontal */
+font-family: 'Courier New', Courier, monospace;
+}
+
+.page-content-end span {
+display: block; /* Menyusun setiap kata dalam baris terpisah */
+}
+
+.swal2-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999 !important; /* Pastikan ini lebih tinggi */
+}
+
+.swal2-popup {
+  position: fixed; /* Memastikan posisi tetap di atas */
+  z-index: 9999 !important; /* Memastikan di atas elemen lain */
+  transform: translateZ(0); /* Memastikan pop-up tetap di atas */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.swal2-backdrop {
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
+
+/* Pastikan elemen lain memiliki z-index yang lebih rendah */
+.page-side.back {
+  position: absolute; /* Atau sesuai kebutuhan */
+  z-index: 9998 !important; /* Lebih rendah dari pop-up */
+}
+
+.custom-image-class {
+  width: 100px; /* Sesuaikan lebar gambar */
+  height: 100px; /* Sesuaikan tinggi gambar */
+  object-fit: cover; /* Menjaga proporsi gambar */
+}
