@@ -647,6 +647,13 @@
         </button>
       </div>
     </div>
+    
+    <div class="audio-player">
+      <audio id="audio" src="holdmetight.mp3" preload="auto" autoplay loop></audio>
+      <button class="music-button" onclick="toggleMute()">
+          <img id="music-icon" src="on.png" alt="Music Icon">
+      </button>
+  </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
@@ -726,6 +733,21 @@
                 }
             });
         });
+
+        const audio = document.getElementById('audio');
+        const musicIcon = document.getElementById('music-icon');
+        const unmuteIcon = 'off.png';
+        const muteIcon = 'on.png';
+        audio.volume = 0.1;
+        function toggleMute() {
+            if (audio.muted) {
+                audio.muted = false;
+                musicIcon.src = unmuteIcon;
+            } else {
+                audio.muted = true;
+                musicIcon.src = muteIcon;
+            }
+        }
 
     </script>
   </body>

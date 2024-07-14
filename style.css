@@ -371,3 +371,50 @@ display: block; /* Menyusun setiap kata dalam baris terpisah */
   height: 100px; /* Sesuaikan tinggi gambar */
   object-fit: cover; /* Menjaga proporsi gambar */
 }
+
+
+.content {
+  padding: 20px;
+  padding-bottom: 80px; /* Sisakan ruang di bawah konten untuk logo */
+}
+
+.audio-player {
+  display: flex;
+  align-items: center;
+  position: fixed; /* Logo tetap di layar saat digulir */
+  bottom: 20px; /* Jarak dari bawah halaman */
+  right: 20px; /* Jarak dari sisi kanan halaman */
+  z-index: 1000;
+}
+
+audio {
+  display: none; /* Disembunyikan */
+}
+
+.music-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.music-button img {
+  width: 50px; /* Ukuran logo */
+  height: 50px;
+}
+
+.music-button img:hover {
+  opacity: 0.7; /* Efek hover */
+}
+
+.volume-control {
+  width: 100%;
+  margin-top: 10px
+}
+
+@media (max-width: 600px) {
+  .music-button img {
+      width: 40px; /* Ukuran logo lebih kecil pada perangkat kecil */
+      height: 40px;
+  }
+}
