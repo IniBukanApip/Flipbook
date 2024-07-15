@@ -375,7 +375,7 @@ display: block; /* Menyusun setiap kata dalam baris terpisah */
 
 .content {
   padding: 20px;
-  padding-bottom: 80px; /* Sisakan ruang di bawah konten untuk logo */
+  flex: 1;/* Sisakan ruang di bawah konten untuk logo */
 }
 
 .audio-player {
